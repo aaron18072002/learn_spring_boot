@@ -11,6 +11,13 @@ import com.in28minutes.learn_spring_boot.courses.beans.Course;
 public class CourseController {
 	@GetMapping("/courses")
 	public List<Course> getCourses() {
-		return List.of(new Course(1l, "Learn Spring Boot", "in28minutes"));
+		return List.of(
+				new Course(1l, "Learn Spring Boot", "in28minutes"),
+				new Course(2l, "Learn Fullstack with Java and Javascript", "in28minutes"));
+	}
+	
+	@GetMapping("/course/1")
+	public Course getCourseById() {
+		return new Course(1l, "Learn Spring Boot", "in28minutes"); 
 	}
 }
